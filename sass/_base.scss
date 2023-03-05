@@ -1,0 +1,114 @@
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Signika Negative", sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+  min-height: 100vh;
+  color: #212529;
+  @include background-wheels;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.quote {
+  max-width: 120rem;
+  margin: 10rem;
+  margin-bottom: 15rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.42);
+  background-color: rgba(#fff, 0.1);
+  padding: 2rem 3rem;
+  border-radius: 2rem;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__svg {
+    align-self: flex-start;
+  }
+
+  &__icon {
+    display: inline-block;
+    height: 5rem;
+    width: 5rem;
+    fill: #212529;
+  }
+
+  &__author {
+    display: block;
+    text-align: center;
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  &__container-btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__btn {
+    font-family: "Signika Negative", sans-serif;
+    font-weight: 700;
+    padding: 1.5rem 3rem;
+    color: #fff;
+    font-size: 2.4rem;
+  }
+}
+
+.facebook__icon {
+  width: 3rem;
+  height: 3rem;
+  fill: #4267b2;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 3rem;
+  background-color: #343a40;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.42);
+  transition: all 0.3s ease-in-out;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  color: #f03e3e;
+  background-color: #495057;
+}
+
+.btn:hover .facebook__icon {
+  transition: all 0.3s ease-in-out;
+  background-color: #f03e3e;
+}
+
+.btn:active {
+  box-shadow: none;
+  transform: translateY(0.5rem);
+}
