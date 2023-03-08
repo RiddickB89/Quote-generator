@@ -1,6 +1,14 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+
+  @media only screen and (max-width: 42em) {
+    font-size: 55%;
+  }
+
+  @media only screen and (max-width: 32.5em) {
+    font-size: 50%;
+  }
 }
 
 *,
@@ -20,17 +28,24 @@ body {
   @include background-wheels;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .quote {
-  max-width: 120rem;
-  margin: 10rem;
-  margin-bottom: 15rem;
+  max-width: 100rem;
+  margin: 0 10rem;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.42);
   background-color: rgba(#fff, 0.1);
   padding: 2rem 3rem;
   border-radius: 2rem;
+
+  @media only screen and (max-width: 42em) {
+    margin: 0 7rem;
+  }
+
+  @media only screen and (max-width: 32.5em) {
+    margin: 0 3rem;
+  }
 
   &__container {
     display: flex;
@@ -50,6 +65,10 @@ body {
     fill: #212529;
   }
 
+  &__text {
+    text-align: start;
+  }
+
   &__author {
     display: block;
     text-align: center;
@@ -63,7 +82,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
   }
 
   &__btn {
@@ -75,12 +94,10 @@ body {
   }
 }
 
-.facebook__icon {
+.twitter__icon {
   width: 3rem;
   height: 3rem;
-  fill: #4267b2;
-  background-color: #fff;
-  border-radius: 50%;
+  fill: #fff;
 }
 
 .btn,
@@ -91,6 +108,7 @@ body {
   align-items: center;
   padding: 0.5rem 3rem;
   background-color: #343a40;
+  color: #fff;
   border-radius: 1rem;
   box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.42);
   transition: all 0.3s ease-in-out;
@@ -103,12 +121,31 @@ body {
   background-color: #495057;
 }
 
-.btn:hover .facebook__icon {
+.btn:hover .twitter__icon {
   transition: all 0.3s ease-in-out;
-  background-color: #f03e3e;
+  fill: #1da1f2;
 }
 
 .btn:active {
   box-shadow: none;
   transform: translateY(0.5rem);
+}
+
+.loader {
+  border: 1.6rem solid #f3f3f3; /* Light grey */
+  border-top: 1.6rem solid #495057; /* Blue */
+  border-radius: 50%;
+  width: 12rem;
+  height: 12rem;
+  align-self: center;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
